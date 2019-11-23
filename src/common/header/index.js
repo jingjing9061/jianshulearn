@@ -45,7 +45,7 @@ const Header = (props) =>{
 //state是store内所有数据
 const mapStateToProps = (state)=>{
 	return {
-		focused:state.focused//仓库的state.focused映射到focused上
+		focused:state.header.focused//仓库的state.focused映射到focused上
 	}
 }
 
