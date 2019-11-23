@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
 	height: 56px;
 	border-bottom: 1px solid #f0f0f0;
 `;
+
 export const Logo = styled.a.attrs({
 	href:'/'
 })`
@@ -18,6 +19,7 @@ export const Logo = styled.a.attrs({
 	background: url(${logoPic});
 	background-size: contain;
 `;
+
 export const Nav = styled.div`
 	width: 960px;
 	height: 100%;
@@ -25,6 +27,7 @@ export const Nav = styled.div`
 	box-sizing: border-box;
 	margin: 0 auto;
 `;
+
 export const NavItem = styled.div`
 	line-height: 56px;
 	font-size: 17px;
@@ -44,17 +47,7 @@ export const NavItem = styled.div`
 
 export const SearchWrapper = styled.div`
 	position: relative;
-	float:left;
-	.slide-enter {
-		transition: all .2s ease-out;
-	}
-	.slide-enter-active {
-		width: 240px;
-	}
-	.slide-exit-active {
-		width: 160px;
-	}
-	
+	float: left;
 	.iconfont {
 		position: absolute;
 		right:5px;
@@ -70,8 +63,6 @@ export const SearchWrapper = styled.div`
 		}
 	}
 `;
-
-
 
 export const NavSearch = styled.input.attrs({
 	placeholder:'搜索'
@@ -93,6 +84,15 @@ export const NavSearch = styled.input.attrs({
 	}
 	&.focused {
 		width: 240px;
+	}
+	&.slide-enter {
+		transition: all 2s ease-out;
+	}
+	&.slide-enter-active {
+		width: 240px;
+	}
+	&.slide-exit-active {
+		width: 160px;
 	}
 `;
 
