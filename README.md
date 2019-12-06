@@ -16,5 +16,6 @@ import styled from 'styled-components';
 ## react-transition-group的使用  
 import { CSSTransition } from 'react-transition-group';
 
-
+##immutable库的使用 防止误操作修改state里面的数据
+import { fromJS } from 'immutable';//fromJS可以把数据对象转化为immutable对象
 

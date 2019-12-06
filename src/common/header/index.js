@@ -1,11 +1,31 @@
 import React, { Component }  from 'react';
-import { HeaderWrapper,Logo,Nav,NavItem,NavSearch,Addition,Button,SearchWrapper} from './style';
+import { HeaderWrapper,Logo,Nav,NavItem,NavSearch,Addition,Button,SearchWrapper,SearchInfo,SearchInfoTitle,SearchInfoSwitch,SearchInfoItem,SearchInfoList} from './style';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { actionCreators }   from './store';
 
 
 class Header extends Component {
+	getListArea(show){
+		if (show) {
+			return (
+				  <SearchInfo>
+				  	<SearchInfoTitle>
+				  		热门搜索
+						<SearchInfoSwitch>换一批</SearchInfoSwitch>
+				  	</SearchInfoTitle>
+				  	<SearchInfoList>
+				  		<SearchInfoItem>教育</SearchInfoItem>
+				  		<SearchInfoItem>读书</SearchInfoItem>
+				  		<SearchInfoItem>投稿</SearchInfoItem>
+				  		<SearchInfoItem>教育</SearchInfoItem>
+				  	</SearchInfoList>
+				  </SearchInfo>
+			)
+		}else{
+			return null
+		}
+	}
 
 	render(){
 		return(
@@ -33,6 +53,7 @@ class Header extends Component {
 						</div>
 						</CSSTransition>
 						<span className={this.props.focused ? 'focused iconfont':'iconfont'}>&#xe635;</span>
+						{this.getListArea(this.props.focused)}
 					</SearchWrapper>
 				</Nav>
 				<Addition>
@@ -47,7 +68,6 @@ class Header extends Component {
 
 	}
 }
-
 
 
 //state是store内所有数据
